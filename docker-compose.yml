@@ -1,0 +1,37 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "${API_PORT:-8100}:8000"
+    environment:
+      DATABASE_URL: postgresql://namazu:namazu@db:5432/namazu
+      DEBUG: "true"
+    env_file:
+      - backend/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend/app:/app/app  # hot-reload in development
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: namazu
+      POSTGRES_PASSWORD: namazu
+      POSTGRES_DB: namazu
+    ports:
+      - "${DB_PORT:-5533}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U namazu -d namazu"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

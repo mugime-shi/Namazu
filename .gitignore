@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+build/
+
+# Test & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Environment
+.env
+!.env.example
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Terraform
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.backup
+infra/.terraform.lock.hcl
+infra/*.tfvars
+!infra/*.tfvars.example
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
