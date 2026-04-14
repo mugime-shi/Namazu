@@ -101,6 +101,95 @@ Fixed fees include elsäkerhetsavgift (11.10 kr/yr), nätövervakningsavgift (4.
 
 ---
 
+## SE1 — Skellefteå Kraft Elnät
+
+- **Valid**: 2026-01-01 onwards
+- **Source**: [skekraft.se/privat/elnat/elnatspriser](https://www.skekraft.se/privat/elnat/elnatspriser/)
+- All prices inkl moms on source.
+
+| Dwelling/Säkring | Fast (inkl, kr/yr) | Fast (exkl, kr/yr) | Överföring (exkl, öre/kWh) |
+|-----------------|-------------------|--------------------|-----------------------------|
+| Apartment 16L | 2,225 | 1,780 | 8.8 |
+| 16A | 5,660 | 4,528 | 8.8 |
+| 20A | 8,180 | 6,544 | 8.8 |
+| 25A | 9,920 | 7,936 | 8.8 |
+
+No effektavgift for säkringsabonnemang. Myndighetsavgifter 131.80 kr/yr inkl moms included.
+
+### SE1 gaps
+- **Luleå Energi**: New effekttariff from Sep 2026. 2026 prices in unreadable PDF. To be added.
+- **Umeå Energi**: SPA website, prices not in HTML. "One of Sweden's lowest elnätsavgifter." To be added.
+
+---
+
+## SE2 — Jämtkraft Elnät (Östersund)
+
+- **Valid**: 2026-01-01 onwards
+- **Source**: [jamtkraft.se/privat/elnat/elnatsavgifter](https://www.jamtkraft.se/privat/elnat/elnatsavgifter/)
+- All prices inkl moms on source.
+
+| Dwelling/Säkring | Fast (inkl, kr/yr) | Fast (exkl, kr/yr) | Överföring (exkl, öre/kWh) |
+|-----------------|-------------------|--------------------|-----------------------------|
+| Apartment 16A | 2,490 | 1,992 | 6.0 |
+| 16A | 5,700 | 4,560 | 6.0 |
+| 20A | 9,340 | 7,472 | 6.0 |
+| 25A | 11,880 | 9,504 | 6.0 |
+
+No effektavgift. Effekttariff planned from Oct 2026.
+
+## SE2 — Gävle Energi Elnät
+
+- **Valid**: 2026-01-01 onwards
+- **Source**: [gavleenergi.se/elnat/elnatspriser](https://www.gavleenergi.se/elnat/elnatspriser/)
+- All prices inkl moms on source.
+
+| Dwelling/Säkring | Fast (inkl, kr/yr) | Fast (exkl, kr/yr) | Överföring (exkl, öre/kWh) |
+|-----------------|-------------------|--------------------|-----------------------------|
+| Apartment 16A | 1,995 | 1,596 | 12.0 |
+| 16A | 4,340 | 3,472 | 12.0 |
+| 20A | 6,435 | 5,148 | 12.0 |
+| 25A | 8,640 | 6,912 | 12.0 |
+
+No effektavgift. Effektavgift from Sep 2026.
+
+### SE2 gaps
+- **E.ON Energidistribution**: Major operator in SE2. Website returns 403. PDFs also blocked. To be added.
+
+---
+
+## SE4 — Öresundskraft (Helsingborg)
+
+- **Valid**: 2026-01-01 onwards
+- **Source**: [oresundskraft.se/privat/elnat/elnatsavgifter](https://www.oresundskraft.se/privat/elnat/elnatsavgifter/)
+- All prices inkl moms on source.
+
+| Dwelling | Fast (inkl, kr/yr) | Fast (exkl, kr/yr) | Överföring formula (inkl) | Överföring est. (exkl) |
+|----------|-------------------|--------------------|--------------------------|-----------------------|
+| Apartment | 2,415 | 1,932 | 17 + 5.57% × MMU | ~15.8* |
+| 16A | 5,160 | 4,128 | 17 + 5.57% × MMU | ~15.8* |
+
+*Transfer fee is spot-linked. Estimated at typical SE4 spot ~50 öre/kWh: 17 + 2.8 = 19.8 inkl → 15.8 exkl.
+No effektavgift (government stopped requirement).
+
+## SE4 — Kraftringen Elnät (Lund)
+
+- **Valid**: 2026-01-01 onwards
+- **Source**: [kraftringen.se/privat/elnat/elnatsavgifter/komplett-elnatsprislista](https://www.kraftringen.se/privat/elnat/elnatsavgifter/komplett-elnatsprislista/)
+- All prices inkl moms on source.
+
+| Dwelling | Fast (inkl, kr/mån) | Fast (exkl, kr/yr) | Överföring formula (inkl) | Överföring est. (exkl) |
+|----------|-------------------|--------------------|--------------------------|----------------------|
+| Apartment | 345 | 3,312 | 20 + 0.05 × spot | ~18.0* |
+| 16A | 685 | 6,576 | 20 + 0.05 × spot | ~18.0* |
+
+*Transfer fee is spot-linked. Estimated at typical SE4 spot ~50 öre: 20 + 2.5 = 22.5 inkl → 18.0 exkl.
+No effektavgift.
+
+### SE4 gaps
+- **E.ON Energidistribution**: Dominant in SE4 (Malmö + wide area). Website returns 403. To be added.
+
+---
+
 ## DB Seed Summary (what we inserted)
 
 | slug | dwelling | fast_fee_sek_year | transfer_fee_ore | effect_fee_sek_kw |
@@ -113,5 +202,25 @@ Fixed fees include elsäkerhetsavgift (11.10 kr/yr), nätövervakningsavgift (4.
 | vattenfall | house | 4,620 | 35.6 | — |
 | malarenergi | apartment | 1,380 | 17.2 | — |
 | malarenergi | house | 3,372 | 17.2 | 47.4 |
+| skelleftea-kraft | apartment | 1,780 | 8.8 | — |
+| skelleftea-kraft | house | 4,528 | 8.8 | — |
+| jamtkraft | apartment | 1,992 | 6.0 | — |
+| jamtkraft | house | 4,560 | 6.0 | — |
+| gavle-energi | apartment | 1,596 | 12.0 | — |
+| gavle-energi | house | 3,472 | 12.0 | — |
+| oresundskraft | apartment | 1,932 | 15.8* | — |
+| oresundskraft | house | 4,128 | 15.8* | — |
+| kraftringen | apartment | 3,312 | 18.0* | — |
+| kraftringen | house | 6,576 | 18.0* | — |
+
+*Spot-linked transfer fee, estimated at typical ~50 öre/kWh spot price.
 
 Energiskatt (36.0 öre/kWh exkl moms, 2026) is national and NOT included in any of the above.
+
+## Gaps (to be added)
+
+| Operator | Area | Reason |
+|----------|------|--------|
+| E.ON Energidistribution | SE2 + SE4 | Website/PDF returns 403 |
+| Luleå Energi | SE1 | New effekttariff from Sep 2026, PDF unreadable |
+| Umeå Energi | SE1 | SPA website, prices not in static HTML |
